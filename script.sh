@@ -1,0 +1,23 @@
+echo "version: '3.8'
+services:
+  debian12:
+    image: debian:12
+    container_name: debian12_container
+    privileged: true
+    ports:
+      - \"22:22\"
+      - \"8006:8006\"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /proc:/proc
+      - /dev:/dev
+      - /run/systemd:/run/systemd
+    environment:
+      - container=docker
+    command: >
+      bash -c \"
+        apt update &&
+        apt install systemd systemd-sysv -y &&
+        echo \"root:root\" | chpasswd &&
+        /sbin/init\"
+    restart: unless-stopped" > docker-compose.yml
