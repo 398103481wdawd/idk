@@ -5,7 +5,7 @@ on:
  
 jobs:
   debian:
-    runs-on: debian-12
+    runs-on: debian-bookworm
     steps:
 
       - name: Test Command
