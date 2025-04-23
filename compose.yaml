@@ -17,7 +17,7 @@ services:
       - container=docker
     command: >
       bash -c "
-      apt update && apt install -y sudo systemd systemd-sysv openssh-server &&
+      apt update &&
       echo "root:root" | chpasswd &&
       /sbin/init"
     restart: unless-stopped
