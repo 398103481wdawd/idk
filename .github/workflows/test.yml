@@ -1,0 +1,12 @@
+name: Debian 12 
+
+on: 
+  workflow_dispatch:
+ 
+jobs:
+  debian:
+    runs-on: debian-12
+    steps:
+
+      - name: Test Command
+        run: cat /etc/os-release
