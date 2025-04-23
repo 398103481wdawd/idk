@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install -y systemd systemd-sysv
 
 # Set the root password
-RUN echo \"root:root\" | chpasswd
+RUN useradd efe && usermod -aG sudo efe && echo "efe:efe" | chpasswd 
 
 # Set environment variable to indicate running in Docker
 ENV container=docker
