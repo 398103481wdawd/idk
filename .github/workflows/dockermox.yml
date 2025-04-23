@@ -1,0 +1,21 @@
+name: Android 
+
+on: 
+  workflow_dispatch:
+ 
+jobs:
+  android:
+    runs-on: ubuntu:latest
+    steps:
+
+      - name: Getting Updates and Installing Tailscale, QEMU.
+        run: |
+          sudo apt update -y
+          sudo apt install aria2 wget lxde qemu-kvm websockify novnc tigervnc-standalone-server -y
+          sudo apt install docker.io -y
+          sudo curl -fsSL https://tailscale.com/install.sh | sh
+          sudo tailscale up --ssh
+      - name: Provisioning and running Docker.
+        run: |
+          sudo wget -qO docker-compose.yml https://raw.githubusercontent.com/398103481wdawd/idk/refs/heads/main/compose.yaml
+          docker-compose up --build    
