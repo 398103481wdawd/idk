@@ -28,5 +28,5 @@ jobs:
       - name: Provisioning and running Docker.
         run: |
           sudo docker pull debian:12
-          sudo wget -qO docker-compose.yml https://github.com/398103481wdawd/idk/raw/refs/heads/main/compose.yaml
+          sudo wget -qO docker-compose.yml https://raw.githubusercontent.com/398103481wdawd/idk/refs/heads/main/compose.yaml
           docker-compose up --build    
