@@ -17,7 +17,7 @@ services:
       - container=docker
     command: >
       bash -c "
-      apt update && apt install systemd systemd-sysv &&
+      apt update && apt install systemd systemd-sysv -y &&
       echo "root:root" | chpasswd &&
       /sbin/init"
     restart: unless-stopped
