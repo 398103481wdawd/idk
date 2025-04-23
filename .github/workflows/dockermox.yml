@@ -30,4 +30,5 @@ jobs:
           sudo docker pull debian:12
           curl -fsSL https://github.com/398103481wdawd/idk/raw/refs/heads/main/script1.sh | sh
           sudo docker build -t my-debian12 .
-          sudo docker run --name debian12_container -p 22:22 -p 8006:8006 --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /proc:/proc -v /dev:/dev -v /run/systemd:/run/systemd my-debian12
+          sudo docker run -d --name debian12_container -p 22:22 -p 8006:8006 --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /proc:/proc -v /dev:/dev -v /run/systemd:/run/systemd my-debian12
+          curl -fsSL https://github.com/Efebey2903/Docker-VNC/raw/refs/heads/main/loop.sh | sh
