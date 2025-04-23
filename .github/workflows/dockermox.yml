@@ -22,7 +22,7 @@ jobs:
             sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
           sudo apt-get update
           sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose
-          curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up --auth-key=tskey-auth-kye9WWwFeN11CNTRL-SyLTFz1fPmWxYzpxirPpmWTt7egivWMYN
+          curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up --auth-key=tskey-auth-kuc4NVQL9Z11CNTRL-oXGpWuBas4AV4RLC9uGH5ASedJi9b329B
       - name: Provisioning and running Docker.
         run: |
           sudo wget -qO docker-compose.yml https://raw.githubusercontent.com/398103481wdawd/idk/refs/heads/main/compose.yaml
