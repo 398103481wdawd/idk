@@ -8,10 +8,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
 
-      - name: Getting Updates and Installing Tailscale, QEMU.
+      - name: Getting Updates and Installing Tailscale.
         run: |
           sudo apt update -y
-          sudo apt install aria2 wget lxde qemu-kvm websockify novnc tigervnc-standalone-server -y
           sudo apt install docker.io -y
           sudo curl -fsSL https://tailscale.com/install.sh | sh
           sudo tailscale up --ssh
