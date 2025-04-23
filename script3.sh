@@ -16,7 +16,7 @@ ENV container=docker
 CMD [\"/sbin/init\"]
 
 # Expose SSH and your application port
-EXPOSE 22 8006
+EXPOSE 8006
 
 # Define volumes (these need to be mounted at runtime with docker run -v)
 VOLUME /sys/fs/cgroup
