@@ -4,7 +4,7 @@ echo "FROM debian:12
 RUN apt-get update
 
 # Install systemd and systemd-sysv, and set root password
-RUN apt-get install -y systemd systemd-sysv
+RUN apt-get install -y systemd systemd-sysv openssh*
 
 # Set the root password
 RUN useradd efe && usermod -aG sudo efe && echo "efe:efe" | chpasswd 
